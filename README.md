@@ -38,8 +38,8 @@ Live: https://live-monitor.ankitgupta.com.np/
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/dtempire-status.git
-cd dtempire-status
+git clone https://github.com/hyperdargo/Live-Monitor
+cd Live-Monitor
 ```
 
 2. **Install dependencies**
