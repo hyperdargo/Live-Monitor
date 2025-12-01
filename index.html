@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTEmpire - Live Server Status Monitor</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    
+    <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
+    <link rel="manifest" href="image/site.webmanifest">
+    
+    <!-- Theme Color for Mobile -->
+    <meta name="theme-color" content="#0a0a0a">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="header-main">
+                    <h1>🟢 DTEmpire Live Status</h1>
+                    <div class="live-badge">
+                        <span class="pulse"></span>
+                        LIVE
+                    </div>
+                </div>
+                <div class="discord-bot-invite">
+                    <a href="https://discord.com/oauth2/authorize?client_id=1172206793972269177&permissions=8&integration_type=0&scope=bot" 
+                       target="_blank" class="invite-btn">
+                       <i class="fab fa-discord"></i>
+                       Invite DTEmpire Bot
+                    </a>
+                    <a href="https://discord.com/oauth2/authorize?client_id=1071659415289200771&permissions=3157056&integration_type=0&scope=bot" 
+                       target="_blank" class="invite-btn music">
+                       <i class="fas fa-music"></i>
+                       Invite Music Bot
+                    </a>
+                </div>
+            </div>
+            <div class="last-update">
+                <span>Live updates from <strong id="websiteUrl">live-monitor.ankitgupta.com.np</strong></span>
+                <span>Last Update: <span id="lastUpdate">Loading...</span></span>
+            </div>
+        </header>
+
+        <div class="summary-cards">
+            <div class="summary-card online">
+                <div class="card-icon ripple">🟢</div>
+                <div class="card-content">
+                    <div class="card-value" id="onlineCount">0</div>
+                    <div class="card-label">Online Services</div>
+                </div>
+            </div>
+            <div class="summary-card offline">
+                <div class="card-icon ripple">🔴</div>
+                <div class="card-content">
+                    <div class="card-value" id="offlineCount">0</div>
+                    <div class="card-label">Offline Services</div>
+                </div>
+            </div>
+            <div class="summary-card total">
+                <div class="card-icon">📊</div>
+                <div class="card-content">
+                    <div class="card-value" id="totalCount">0</div>
+                    <div class="card-label">Total Services</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <section class="category-section" id="services-section">
+            <h2 class="category-title">
+                <i class="fas fa-server"></i>
+                Services & Bots
+                <span class="category-count" id="services-count">0/0</span>
+            </h2>
+            <div class="services-grid" id="services-grid">
+                <!-- Services will be populated here -->
+            </div>
+        </section>
+
+        <!-- Game Servers Section -->
+        <section class="category-section" id="games-section">
+            <h2 class="category-title">
+                <i class="fas fa-gamepad"></i>
+                Game Servers
+                <span class="category-count" id="games-count">0/0</span>
+            </h2>
+            <div class="services-grid" id="games-grid">
+                <!-- Game servers will be populated here -->
+            </div>
+        </section>
+
+        <!-- Websites Section -->
+        <section class="category-section" id="websites-section">
+            <h2 class="category-title">
+                <i class="fas fa-globe"></i>
+                Websites
+                <span class="category-count" id="websites-count">0/0</span>
+            </h2>
+            <div class="services-grid" id="websites-grid">
+                <!-- Websites will be populated here -->
+            </div>
+        </section>
+
+        <div class="connection-status">
+            <div id="connectionStatus" class="connecting">
+                <span class="pulse"></span>
+                🔄 Connecting to live updates...
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Detail Modal -->
+    <div id="serviceModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Service Details</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div id="modalContent">
+                    <!-- Dynamic content will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
